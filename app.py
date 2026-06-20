@@ -19,7 +19,7 @@ if predict_button:
 def load_model():
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     # Change line 15 to this:
-    MODEL_PATH = os.path.join(BASE_DIR, "machine_failure_model.pkl")
+    MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
     try:
         return joblib.load(MODEL_PATH)
     except Exception as e:
