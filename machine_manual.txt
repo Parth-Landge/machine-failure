@@ -1,0 +1,15 @@
+MILLING MACHINE MAINTENANCE & TROUBLESHOOTING MANUAL
+
+SECTION 1: HIGH TOOL WEAR (>200 mins)
+- Diagnosis: The cutting tool has degraded past safe operational limits.
+- Action: Immediately halt the spindle. Replace the milling cutter. Recalibrate the Z-axis offset.
+- Warning: Continued operation will cause severe workpiece damage and potential spindle bearing failure.
+
+SECTION 2: TEMPERATURE ANOMALIES (Process Temp > 310K or Temp Difference < 8K)
+- Diagnosis: Insufficient coolant flow or extreme friction detected.
+- Action: Check coolant reservoir levels. Inspect coolant nozzles for blockages. Reduce Rotational Speed (RPM) by 15%. 
+- Warning: Thermal expansion may cause tool binding.
+
+SECTION 3: TORQUE OVERLOAD (Torque > 60 Nm)
+- Diagnosis: The machine is cutting too deep or the material is too hard for the current RPM.
+- Action: Reduce feed rate. Increase RPM to lower chip load. Check if the tool is blunt.
