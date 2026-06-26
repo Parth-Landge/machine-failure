@@ -12,7 +12,7 @@ app = FastAPI(
     version="1.0"
 )
 
-# 2. Load the Model Safely (Looking locally in the same folder)
+# 2. Load the Model 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
 
