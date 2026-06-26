@@ -9,11 +9,11 @@ st.set_page_config(page_title="Predictive Maintenance", layout="wide")
 
 API_URL = "https://milling-machine-api.onrender.com/predict"
 
-# 2. Sidebar Controls
-st.sidebar.header("🔑 AI Access")
+# 2. sidebar controls
+st.sidebar.header("AI Access")
 gemini_api_key = st.sidebar.text_input("Google Gemini API Key", type="password")
 
-st.sidebar.header("🛠️ Machine Settings")
+st.sidebar.header("Machine Settings")
 machine_type = st.sidebar.selectbox("Machine Quality Type", ["L", "M", "H"])
 air_temp = st.sidebar.number_input("Air Temperature [K]", value=298.0)
 process_temp = st.sidebar.number_input("Process Temperature [K]", value=308.0)
@@ -22,7 +22,7 @@ torque = st.sidebar.number_input("Torque [Nm]", value=40.0)
 tool_wear = st.sidebar.number_input("Tool Wear [min]", value=50.0)
 
 # 3. Main Dashboard Area
-st.title("🏭 AI-Powered Predictive Maintenance")
+st.title("AI-Powered Predictive Maintenance")
 st.write("Live sensor monitoring with Generative AI RAG Diagnostics.")
 
 predict_button = st.sidebar.button("Run Live Diagnostics", use_container_width=True)
@@ -69,13 +69,13 @@ if predict_button:
             with col2:
                 st.subheader("Engine Diagnostics Response")
                 if not prediction:
-                    st.success("✅ **NORMAL:** API confirms parameters are within safe operation limits.")
+                    st.success("**NORMAL:** API confirms parameters are within safe operation limits.")
                 else:
-                    st.error("⚠️ **CRITICAL FAILURE IMMINENT:** Machinery limits exceeded.")
+                    st.error("**CRITICAL FAILURE IMMINENT:** Machinery limits exceeded.")
                     
                     # --- THE RAG AI MECHANIC STARTS HERE ---
                     st.markdown("---")
-                    st.subheader("🤖 AI Mechanic Repair Guide")
+                    st.subheader("AI Mechanic Repair Guide")
                     
                     if not gemini_api_key:
                         st.warning("Please enter your Gemini API Key in the sidebar to generate a custom repair guide.")
@@ -116,6 +116,6 @@ if predict_button:
             st.error(f"Backend API returned an error: {response.text}")
 
     except requests.exceptions.ConnectionError:
-        st.error("❌ Connection Failed! Make sure your API is running.")
+        st.error("Connection Failed! Make sure your API is running.")
 else:
-    st.info("👈 Adjust parameters and click **Run Live Diagnostics**.")
+    st.info("Adjust parameters and click **Run Live Diagnostics**.")
