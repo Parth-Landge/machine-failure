@@ -18,10 +18,10 @@ MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
 
 try:
     model = joblib.load(MODEL_PATH)
-    print("✅ Central AI Model Loaded Successfully.")
+    print("Central AI Model Loaded Successfully.")
 except Exception as e:
     model = None
-    print(f"❌ Critical Error: Could not load model. {e}")
+    print(f"Critical Error: Could not load model. {e}")
 
 # 3. Define the Incoming Data Schema
 class SensorData(BaseModel):
