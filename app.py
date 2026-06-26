@@ -9,9 +9,7 @@ st.set_page_config(page_title="Predictive Maintenance", layout="wide")
 
 API_URL = "https://milling-machine-api.onrender.com/predict"
 
-# 2. Sidebar Controls
-st.sidebar.header("🔑 AI Access")
-gemini_api_key = st.sidebar.text_input("Google Gemini API Key", type="password")
+
 
 st.sidebar.header("🛠️ Machine Settings")
 machine_type = st.sidebar.selectbox("Machine Quality Type", ["L", "M", "H"])
