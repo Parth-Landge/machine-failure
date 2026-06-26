@@ -11,7 +11,7 @@ API_URL = "https://milling-machine-api.onrender.com/predict"
 
 
 
-st.sidebar.header("🛠️ Machine Settings")
+st.sidebar.header("Machine Settings")
 machine_type = st.sidebar.selectbox("Machine Quality Type", ["L", "M", "H"])
 air_temp = st.sidebar.number_input("Air Temperature [K]", value=298.0)
 process_temp = st.sidebar.number_input("Process Temperature [K]", value=308.0)
@@ -20,7 +20,7 @@ torque = st.sidebar.number_input("Torque [Nm]", value=40.0)
 tool_wear = st.sidebar.number_input("Tool Wear [min]", value=50.0)
 
 # 3. Main Dashboard Area
-st.title("🏭 AI-Powered Predictive Maintenance")
+st.title("AI-Powered Predictive Maintenance")
 st.write("Live sensor monitoring with Generative AI RAG Diagnostics.")
 
 predict_button = st.sidebar.button("Run Live Diagnostics", use_container_width=True)
@@ -67,14 +67,14 @@ if predict_button:
             with col2:
                 st.subheader("Engine Diagnostics Response")
                 if not prediction:
-                    st.success("✅ **NORMAL:** API confirms parameters are within safe operation limits.")
+                    st.success("**NORMAL:** API confirms parameters are within safe operation limits.")
                 else:
-                    st.error("⚠️ **CRITICAL FAILURE IMMINENT:** Machinery limits exceeded.")
+                    st.error("**CRITICAL FAILURE IMMINENT:** Machinery limits exceeded.")
                     
                     # --- THE RAG AI MECHANIC STARTS HERE ---
                     # --- THE RAG AI MECHANIC STARTS HERE ---
                     st.markdown("---")
-                    st.subheader("🤖 AI Mechanic Repair Guide")
+                    st.subheader("AI Mechanic Repair Guide")
                     
                     with st.spinner("AI Mechanic is reading the manual and writing a repair strategy..."):
                         try:
@@ -113,6 +113,6 @@ if predict_button:
             st.error(f"Backend API returned an error: {response.text}")
 
     except requests.exceptions.ConnectionError:
-        st.error("❌ Connection Failed! Make sure your API is running.")
+        st.error(" Connection Failed! Make sure your API is running.")
 else:
-    st.info("👈 Adjust parameters and click **Run Live Diagnostics**.")
+    st.info(" Adjust parameters and click **Run Live Diagnostics**.")
